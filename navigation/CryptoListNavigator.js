@@ -1,13 +1,13 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from "../screens/Home"
+import { createStackNavigator } from '@react-navigation/stack';
 import CryptoList from "../screens/CryptoList";
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import CryptoInfo from "../screens/CryptoInfo";
 
-const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export default function MainNavigation() {
+export default function CryptoListNavigator() {
   return (
-    <Tab.Navigator
+    <Stack.Navigator
       screenOptions={{
         tabBarStyle: {
           backgroundColor: '#23232b',
@@ -28,27 +28,14 @@ export default function MainNavigation() {
         headerTitleStyle: {
           color: "white"
         },
-      }}
-
-    >
-      <Tab.Screen
-        name="Current"
-        component={Home}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="web" color={color} size={36} />
-          ),
-      }}/>
-      <Tab.Screen
-        name="Cryptos"
-        component={CryptoList}
-        options={{
-          tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bitcoin" color={color} size={36} />
-          ),
-        }}/>
-    </Tab.Navigator>
+      }}>
+      <Stack.Screen
+        name="crypto_list" component={CryptoList} />
+      <Stack.Screen
+        options={({ route }) => ({
+          title: route.params?.id.toUpperCase(),})}
+        name="crypto_info"
+        component={CryptoInfo} />
+    </Stack.Navigator>
   );
 }

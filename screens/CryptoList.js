@@ -10,18 +10,18 @@ export default function CryptoList() {
     const data = await fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1");
     const json = await data.json();
     setCryptoList(json);
-  }, [])
+  }, [setCryptoList])
 
   useEffect(() => {
     getCryptoList();
-  }, []);
+  }, [getCryptoList]);
 
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.list}
         data={cryptoList}
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <Item crypto={item} />}
       />
     </View>

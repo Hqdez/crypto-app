@@ -1,46 +1,35 @@
-import { StyleSheet, Text, SafeAreaView, View, Dimensions } from 'react-native';
-import {
-  LineChart,
-  BarChart,
-  PieChart,
-  ProgressChart,
-  ContributionGraph,
-  StackedBarChart
-} from "react-native-chart-kit";
+import {StyleSheet, Text, SafeAreaView, View, FlatList} from 'react-native';
+import React, {useCallback, useEffect, useState} from "react";
 
-const screenWidth = Dimensions.get("window").width;
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June"],
-  datasets: [
-    {
-      data: [20, 45, 28, 80, 99, 43],
-      color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
-      strokeWidth: 2 // optional
-    }
-  ],
-  legend: ["Rainy Days"] // optional
-};
-const chartConfig = {
-  color: (opacity = 1) => `rgba(26, 255, 146, ${opacity})`,
-  strokeWidth: 2, // optional, default 3
-  barPercentage: 0.5,
-  useShadowColorFromDataset: false // optional
-};
 
-export default function Home() {
+export default function CryptoInfo({ route, navigation }) {
+  const id = route.params?.id
+
+  const [cryptoInfo, setCryptoInfo] = useState([]);
+
+  const getCryptoInfo = useCallback(async () => {
+    const data = await fetch(`https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`);
+    const json = await data.json();
+    setCryptoInfo(json);
+    console.log(json)
+  }, [setCryptoInfo])
+
+  useEffect(() => {
+    if (!id) navigation.navigate("crypto_list")
+  }, [id])
+
+
+
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
-        <LineChart
-          data={data}
-          width={256}
-          height={256}
-          verticalLabelRotation={30}
-          chartConfig={chartConfig}
-          bezier
-        />
-      </View>
-    </SafeAreaView>
+    <View style={styles.container}>
+      <FlatList
+        style={styles.list}
+        data={cryptoInfo}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => <Item crypto={item} />}
+      />
+    </View>
   );
 }
 

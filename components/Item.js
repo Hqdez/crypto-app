@@ -1,50 +1,89 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
-const CryptoItem = ({ crypto }) => (
-    <TouchableOpacity style={styles.containerItem}>
-    <View style={styles.coinName}>
-      <Image source={{ uri: crypto.image }} style={styles.image} />
-      <View style={styles.containerNames}>
-        <Text style={styles.text}>{crypto.name}</Text>
-        <Text style={styles.textSymbol}>{crypto.symbol}</Text>
-      </View>
-    </View>
-    <View>
-      <Text style={styles.textPrice}>${crypto.current_price}</Text>
-      <Text
-        style={[
-          styles.pricePercentage,
-          crypto.price_change_percentage_24h > 0
-            ? styles.priceUp
-            : styles.priceDown,
-        ]}
-      >
-        {crypto.price_change_percentage_24h.toFixed(2)}%
-      </Text>
-    </View>
-    </TouchableOpacity>
-);
+const CryptoItem = ({ crypto }) => {
+  const navigation = useNavigation();
+  return (
+    <>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("crypto_info", {id: crypto.id})}>
+        <View style={styles.cryptoName}>
+          <Image source={{uri: crypto.image}} style={styles.image}/>
+          <View style={styles.names}>
+            <Text style={styles.text}>{crypto.name}</Text>
+            <Text style={styles.textSymbol}>{crypto.symbol} {crypto.id}</Text>
+          </View>
+        </View>
+        <View>
+          <Text style={styles.textPrice}>${crypto.current_price}</Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              crypto.price_change_percentage_24h > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {crypto.price_change_percentage_24h.toFixed(2)}%
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </>
+  )
+};
+
+const CryptoInfoItem = ({ cryptoInfo }) => {
+  const navigation = useNavigation();
+  return (
+    <>
+      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("crypto_info", {id: crypto.id})}>
+        <View style={styles.cryptoName}>
+          <Image source={{uri: crypto.image}} style={styles.image}/>
+          <View style={styles.names}>
+            <Text style={styles.text}>{crypto.name}</Text>
+            <Text style={styles.textSymbol}>{crypto.symbol} {crypto.id}</Text>
+          </View>
+        </View>
+        <View>
+          <Text style={styles.textPrice}>${crypto.current_price}</Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              crypto.price_change_percentage_24h > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {crypto.price_change_percentage_24h.toFixed(2)}%
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </>
+  )
+};
 
 const styles = StyleSheet.create({
-  containerItem: {
+  container: {
     backgroundColor: '#23232b',
     paddingTop: 10,
+    paddingBottom: 10,
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  containerNames: {
+  names: {
     marginLeft: 10,
+
   },
-  coinName: {
+  cryptoName: {
     flexDirection: "row",
   },
   text: {
     color: "#fff",
+    fontSize: 20,
   },
   textPrice: {
     color: "#fff",
-    fontWeight: "bold",
+    fontSize: 20,
   },
   pricePercentage: {
     textAlign: "right",
@@ -56,11 +95,11 @@ const styles = StyleSheet.create({
     color: "red",
   },
   image: {
-    width: 32,
-    height: 32,
+    width: 40,
+    height: 40,
   },
   textSymbol: {
-    color: "#434343",
+    color: "orange",
     textTransform: "uppercase",
   },
 });
