@@ -1,34 +1,32 @@
-import {StyleSheet, Text, SafeAreaView, View, FlatList} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React, {useCallback, useEffect, useState} from "react";
 
-
-export default function CryptoInfo({ route, navigation }) {
+export default function CryptoInfo({route, navigation}) {
   const id = route.params?.id
 
   const [cryptoInfo, setCryptoInfo] = useState([]);
 
   const getCryptoInfo = useCallback(async () => {
-    const data = await fetch(`https://api.coingecko.com/api/v3/coins/${id}?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false`);
+    const data = await fetch(`https://api.coingecko.com/api/v3/coins/${id}`);
     const json = await data.json();
     setCryptoInfo(json);
-    console.log(json)
   }, [setCryptoInfo])
 
   useEffect(() => {
     if (!id) navigation.navigate("crypto_list")
   }, [id])
 
-
+  useEffect(() => {
+    getCryptoInfo();
+  }, [getCryptoInfo]);
 
 
   return (
     <View style={styles.container}>
-      <FlatList
-        style={styles.list}
-        data={cryptoInfo}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <Item crypto={item} />}
-      />
+      <Image source={{uri: 'cryptoInfo.image'}} style={styles.image}/>
+      <Text>Nom: {cryptoInfo.name}</Text>
+      <Text>Rang CoinGecko: {cryptoInfo.coingecko_rank}</Text>
+      <Text>Score CoinGecko: {cryptoInfo.coingecko_score}</Text>
     </View>
   );
 }

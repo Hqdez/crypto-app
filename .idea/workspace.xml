@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38ef4914-d9b2-4f68-8b0c-e43c7cedbb87" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/news.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/CryptoListNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/CryptoListNavigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/navigation/MainNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/MainNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/CryptoInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CryptoInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/CryptoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CryptoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +30,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="" />
+  </component>
   <component name="ProjectId" id="26VYaqxpoDx6dTmEuzCCjfGZ9n3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -35,12 +43,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/navigation" />
+    <property name="format.on.save" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="F:\Program Files (x86)\WebStorm 2021.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -66,6 +77,16 @@
       <workItem from="1647612598127" duration="691000" />
       <workItem from="1647614014370" duration="146000" />
       <workItem from="1647614163194" duration="4670000" />
+      <workItem from="1647803472757" duration="55000" />
+      <workItem from="1647803536693" duration="160000" />
+      <workItem from="1647803720247" duration="479000" />
+      <workItem from="1647976338266" duration="1405000" />
+      <workItem from="1648238926118" duration="1911000" />
+      <workItem from="1648309918887" duration="4949000" />
+      <workItem from="1648372833100" duration="3022000" />
+      <workItem from="1648398983386" duration="2071000" />
+      <workItem from="1648404658153" duration="1565000" />
+      <workItem from="1648889631846" duration="1502000" />
     </task>
     <servers />
   </component>
@@ -82,6 +103,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -89,10 +111,13 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/navigation/MainNavigation.js</url>
           <line>19</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

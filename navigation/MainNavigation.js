@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from "../screens/Home"
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CryptoListNavigator from "./CryptoListNavigator";
@@ -32,22 +32,22 @@ export default function MainNavigation() {
 
     >
       <Tab.Screen
-        name="Current"
+        name="Crypto APP"
         component={Home}
         options={{
           tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="web" color={color} size={36} />
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="web" color={color} size={36}/>
           ),
-      }}/>
+        }}/>
       <Tab.Screen
         name="Cryptos"
         component={CryptoListNavigator}
         options={{
           headerShown: false,
           tabBarLabel: '',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bitcoin" color={color} size={36} />
+          tabBarIcon: ({color, size}) => (
+            <MaterialCommunityIcons name="bitcoin" color={color} size={36}/>
           ),
         }}/>
     </Tab.Navigator>

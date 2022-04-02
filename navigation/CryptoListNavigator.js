@@ -1,5 +1,4 @@
-import Home from "../screens/Home"
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import CryptoList from "../screens/CryptoList";
 import CryptoInfo from "../screens/CryptoInfo";
 
@@ -30,12 +29,13 @@ export default function CryptoListNavigator() {
         },
       }}>
       <Stack.Screen
-        name="crypto_list" component={CryptoList} />
+        name="Liste des cryptos" component={CryptoList}/>
       <Stack.Screen
-        options={({ route }) => ({
-          title: route.params?.id.toUpperCase(),})}
+        options={({route}) => ({
+          title: route.params?.id.toUpperCase(),
+        })}
         name="crypto_info"
-        component={CryptoInfo} />
+        component={CryptoInfo}/>
     </Stack.Navigator>
   );
 }

@@ -1,12 +1,19 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
+import {useNavigation} from '@react-navigation/native';
 
-const CryptoItem = ({ crypto }) => {
+const CryptoItem = ({crypto}) => {
   const navigation = useNavigation();
+
+  const isLongPressed = () => {
+    alert('Is long pressed')
+  }
+
   return (
     <>
-      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("crypto_info", {id: crypto.id})}>
+
+      <TouchableOpacity style={styles.container}
+                        onPress={() => navigation.navigate("crypto_info", {id: crypto.id})} onLongPress={isLongPressed}>
         <View style={styles.cryptoName}>
           <Image source={{uri: crypto.image}} style={styles.image}/>
           <View style={styles.names}>
@@ -15,37 +22,7 @@ const CryptoItem = ({ crypto }) => {
           </View>
         </View>
         <View>
-          <Text style={styles.textPrice}>${crypto.current_price}</Text>
-          <Text
-            style={[
-              styles.pricePercentage,
-              crypto.price_change_percentage_24h > 0
-                ? styles.priceUp
-                : styles.priceDown,
-            ]}
-          >
-            {crypto.price_change_percentage_24h.toFixed(2)}%
-          </Text>
-        </View>
-      </TouchableOpacity>
-    </>
-  )
-};
-
-const CryptoInfoItem = ({ cryptoInfo }) => {
-  const navigation = useNavigation();
-  return (
-    <>
-      <TouchableOpacity style={styles.container} onPress={() => navigation.navigate("crypto_info", {id: crypto.id})}>
-        <View style={styles.cryptoName}>
-          <Image source={{uri: crypto.image}} style={styles.image}/>
-          <View style={styles.names}>
-            <Text style={styles.text}>{crypto.name}</Text>
-            <Text style={styles.textSymbol}>{crypto.symbol} {crypto.id}</Text>
-          </View>
-        </View>
-        <View>
-          <Text style={styles.textPrice}>${crypto.current_price}</Text>
+          <Text style={styles.textPrice}>{crypto.current_price}€</Text>
           <Text
             style={[
               styles.pricePercentage,
