@@ -13,8 +13,9 @@ export default function MainNavigation() {
           backgroundColor: '#23232b',
           borderTopWidth: 0,
           color: "white",
+          justifyContent: 'center',
           paddingTop: 10,
-          height: 90,
+          height: 70
         },
         tabBarActiveTintColor: 'orange',
         tabBarInactiveTintColor: 'white',
@@ -26,7 +27,10 @@ export default function MainNavigation() {
           shadowColor: "transparent",
         },
         headerTitleStyle: {
-          color: "white"
+          color: "white",
+          fontSize: 20,
+          fontWeight: "600",
+          textTransform: "uppercase"
         },
       }}
 
@@ -35,6 +39,7 @@ export default function MainNavigation() {
         name="Crypto APP"
         component={Home}
         options={{
+          headerShown: false,
           tabBarLabel: '',
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons name="web" color={color} size={36}/>

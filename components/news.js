@@ -18,17 +18,26 @@ export default function News() {
     */
   return (
     <View style={styles.container}>
-      <Text>News</Text>
+      <Text style={styles.title}>News</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
+    flex: 4,
     borderColor: 'white',
     borderRadius: 4,
     borderWidth: 1,
-    padding: 10
+    padding: 10,
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    width: "100%",
   },
+  title: {
+    color: "white",
+    fontSize: 18,
+    fontWeight: "600",
+    textTransform: "uppercase"
+  }
 });

@@ -1,13 +1,17 @@
-import {StyleSheet, Text, SafeAreaView, View, Image} from 'react-native';
-import {useCallback, useEffect, useState} from "react";
+import {StyleSheet, Text, SafeAreaView, View, Image, ImageComponent} from 'react-native';
+import React, {useCallback, useEffect, useState} from "react";
 import News from "../components/news";
+import {Switch} from "react-native-gesture-handler";
 
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Crypto APP</Text>
+      </View>
       <View style={styles.logo}>
-        <Text>LOGO</Text>
+        <Image source={require('../assets/logo.png')} style={{width: 300, resizeMode: 'contain'}}/>
       </View>
       <News/>
     </SafeAreaView>
@@ -20,18 +24,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#23232b',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
-    borderColor: 'black',
-    borderWidth: 1,
+    paddingTop: 10
+  },
+  header: {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "flex-start",
+    marginBottom: 10,
+    alignItems: "center",
+    color: 'white',
+    marginTop: 70,
+    paddingHorizontal: 10
+  },
+  title: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "600",
+    textTransform: "uppercase"
   },
   logo: {
     flex: 1,
-    borderColor: 'red',
-    borderWidth: 1,
     justifyContent: 'center',
     marginBottom: 10,
     borderRadius: 4,
-    padding: 10
-  }
-
+    height: 0
+  },
 });

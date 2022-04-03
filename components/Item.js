@@ -1,6 +1,7 @@
 import React from "react";
 import {View, Text, StyleSheet, Image, TouchableOpacity} from "react-native";
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CryptoItem = ({crypto}) => {
   const navigation = useNavigation();
@@ -12,12 +13,17 @@ const CryptoItem = ({crypto}) => {
   return (
     <>
 
-      <TouchableOpacity style={styles.container}
-                        onPress={() => navigation.navigate("crypto_info", {id: crypto.id})} onLongPress={isLongPressed}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => navigation.navigate("crypto_info", {id: crypto.id})}
+        onLongPress={isLongPressed}
+      >
         <View style={styles.cryptoName}>
           <Image source={{uri: crypto.image}} style={styles.image}/>
           <View style={styles.names}>
-            <Text style={styles.text}>{crypto.name}</Text>
+            <Text style={styles.text}>{crypto.name} <Text>⭐</Text></Text>
+
+
             <Text style={styles.textSymbol}>{crypto.symbol} {crypto.id}</Text>
           </View>
         </View>

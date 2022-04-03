@@ -23,10 +23,9 @@ export default function CryptoInfo({route, navigation}) {
 
   return (
     <View style={styles.container}>
-      <Image source={{uri: 'cryptoInfo.image'}} style={styles.image}/>
-      <Text>Nom: {cryptoInfo.name}</Text>
-      <Text>Rang CoinGecko: {cryptoInfo.coingecko_rank}</Text>
-      <Text>Score CoinGecko: {cryptoInfo.coingecko_score}</Text>
+      <Text style={{color: "white"}}>Nom: {cryptoInfo.name}</Text>
+      <Text style={{color: "white"}}>Rang CoinGecko: {cryptoInfo.coingecko_rank}</Text>
+      <Text style={{color: "white"}}>Score CoinGecko: {cryptoInfo.coingecko_score}</Text>
     </View>
   );
 }
@@ -38,6 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 0,
-    padding: 10
+    padding: 10,
+    color: 'white'
   },
 });
