@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView, ImageBackground} from 'react-native';
 import React, {useCallback, useEffect, useState} from "react";
 import Loading from "../components/loading";
 
@@ -37,13 +37,15 @@ export default function CryptoInfo({route, navigation}) {
 
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <Text style={{color: "white"}}>Nom: {cryptoInfo.name}</Text>
-        <Text style={{color: "white"}}>Symbole: {cryptoInfo.symbol}</Text>
-        <Text style={{color: "white"}}>Site web: {cryptoInfo.links.homepage}</Text>
-        <Text style={{color: "white"}}>Valeur actuelle: {cryptoInfo.market_data.current_price.eur} €</Text>
+      <ScrollView style={styles.container}>
+        <Image source={{uri: cryptoInfo.image?.large}} style={styles.image} resizeMode={"contain"}/>
+        <Text style={styles.txt}>ID: {cryptoInfo.id}</Text>
+        <Text style={styles.txt}>Nom: {cryptoInfo.name}</Text>
+        <Text style={styles.txt}>Symbole: {cryptoInfo.symbol}</Text>
+        <Text style={styles.txt}>Site web: {cryptoInfo.links.homepage}</Text>
+        <Text style={styles.txt}>Valeur actuelle: {cryptoInfo.market_data.current_price.eur} €</Text>
         <View style={{flexDirection: 'row'}}>
-          <Text style={{color: "white"}}> % des dernières 24h </Text>
+          <Text style={styles.txt}> % des dernières 24h </Text>
           <Text
             style={[
               styles.pricePercentage,
@@ -55,18 +57,89 @@ export default function CryptoInfo({route, navigation}) {
             {cryptoInfo.market_data.price_change_percentage_24h_in_currency.eur.toFixed(2)}%
           </Text>
         </View>
-        <Text style={{color: "white"}}>Algorithme de hachage: {cryptoInfo.hashing_algorithm}</Text>
-        <Image source={{uri: cryptoInfo.image?.large}} style={{height: 100, width: 100}} resizeMode={"contain"}/>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.txt}> % sur les 7 derniers jours </Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              cryptoInfo.market_data.price_change_percentage_7d_in_currency.eur > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {cryptoInfo.market_data.price_change_percentage_7d_in_currency.eur.toFixed(2)}%
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.txt}> % sur les 30 derniers jours </Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              cryptoInfo.market_data.price_change_percentage_30d_in_currency.eur > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {cryptoInfo.market_data.price_change_percentage_30d_in_currency.eur.toFixed(2)}%
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.txt}> % sur les 60 derniers jours </Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              cryptoInfo.market_data.price_change_percentage_60d_in_currency.eur > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {cryptoInfo.market_data.price_change_percentage_60d_in_currency.eur.toFixed(2)}%
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.txt}> % sur les 200 derniers jours </Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              cryptoInfo.market_data.price_change_percentage_200d_in_currency.eur > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {cryptoInfo.market_data.price_change_percentage_200d_in_currency.eur.toFixed(2)}%
+          </Text>
+        </View>
+        <View style={{flexDirection: 'row'}}>
+          <Text style={styles.txt}> % sur la dernière année </Text>
+          <Text
+            style={[
+              styles.pricePercentage,
+              cryptoInfo.market_data.price_change_percentage_1y_in_currency.eur > 0
+                ? styles.priceUp
+                : styles.priceDown,
+            ]}
+          >
+            {cryptoInfo.market_data.price_change_percentage_1y_in_currency.eur.toFixed(2)}%
+          </Text>
+        </View>
+        <Text style={styles.txt}>Nombres en circulations: {cryptoInfo.market_data.circulating_supply}</Text>
+        <Text style={styles.txt}>Nombres max possible en
+          circulations: {cryptoInfo.market_data.max_supply}</Text>
+        <Text style={styles.txt}>Algorithme de hachage: {cryptoInfo.hashing_algorithm}</Text>
 
-        {cryptoInfo.genesis_date != ""
+
+        {cryptoInfo.genesis_date != null
           ?
-          <Text style={{color: "white"}}>Date de création: {cryptoInfo.genesis_date}</Text>
+          <Text style={styles.txt}>Date de création: {cryptoInfo.genesis_date}</Text>
           : null
         }
 
-        <Text style={{color: "white"}}>Rang CoinGecko: {cryptoInfo.coingecko_rank}</Text>
-        <Text style={{color: "white"}}>Score CoinGecko: {cryptoInfo.coingecko_score}</Text>
-
+        <View style={styles.mt10}>
+          {cryptoInfo.description.fr === "" ? <Text style={styles.txt}>Description
+            :{"\n"}{cryptoInfo.description.en}
+          </Text> : <Text style={styles.txt}>Description
+            :{"\n"}{cryptoInfo.description.fr}</Text>}
+        </View>
       </ScrollView>
     </View>
   );
@@ -82,8 +155,23 @@ const styles = StyleSheet.create({
   },
   priceUp: {
     color: "green",
+    fontSize: 18
   },
   priceDown: {
     color: "red",
+    fontSize: 18
   },
+  image: {
+    width: 100,
+    height: 100,
+    marginRight: 10,
+    marginBottom: 10
+  },
+  txt: {
+    color: 'white',
+    fontSize: 18
+  },
+  mt10: {
+    marginTop: 10
+  }
 });

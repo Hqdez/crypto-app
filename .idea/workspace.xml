@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="38ef4914-d9b2-4f68-8b0c-e43c7cedbb87" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/localStorage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/Item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/chart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/favorite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/loading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/CryptoListNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/CryptoListNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/MainNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/MainNavigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/CryptoInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CryptoInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/CryptoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CryptoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/localStorage.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/localStorage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +95,8 @@
       <workItem from="1649062944247" duration="2576000" />
       <workItem from="1649066825659" duration="16000" />
       <workItem from="1649066854684" duration="16481000" />
-      <workItem from="1649140128895" duration="25049000" />
+      <workItem from="1649140128895" duration="25297000" />
+      <workItem from="1649173265489" duration="3489000" />
     </task>
     <servers />
   </component>
