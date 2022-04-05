@@ -4721,11 +4721,6 @@ react-native-svg@^12.1.0, react-native-svg@^12.3.0:
     css-select "^4.2.1"
     css-tree "^1.0.0-alpha.39"
 
-react-native-switch-toggles@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-switch-toggles/-/react-native-switch-toggles-0.0.1.tgz#35ce86cf7f645c82f4192b4d28d115f0d814a7be"
-  integrity sha512-Uc/z4HX32N6f+82WjjU+6XQjihY1Cl86puG5I11J5/F8T5M3huUPxhC3RCars7zxcU/3MO7AzpQqCKN66xWaJw==
-
 react-native-toast-message@^2.1.5:
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/react-native-toast-message/-/react-native-toast-message-2.1.5.tgz#550acb9c6c0f1ee49c6b57b65a56d34e297eb723"

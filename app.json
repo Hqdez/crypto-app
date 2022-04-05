@@ -2,13 +2,13 @@
   "expo": {
     "name": "adrien_cavel",
     "slug": "adrien_cavel",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#23232b"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
