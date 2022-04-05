@@ -1,20 +1,25 @@
-import {StyleSheet, Text, SafeAreaView, View, Image, ImageComponent} from 'react-native';
-import React, {useCallback, useEffect, useState} from "react";
+import {StyleSheet, Text, SafeAreaView, View, Image} from 'react-native';
+import React from "react";
 import News from "../components/news";
-import {Switch} from "react-native-gesture-handler";
+import Version from "../components/version";
 
 
 export default function Home() {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.title}>Crypto APP</Text>
-      </View>
-      <View style={styles.logo}>
-        <Image source={require('../assets/logo.png')} style={{width: 300, resizeMode: 'contain'}}/>
-      </View>
-      <News/>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.title}>Crypto APP</Text>
+        </View>
+        <View style={styles.logo}>
+          <Image source={require('../assets/logo.png')} style={{width: 300, resizeMode: 'contain'}}/>
+        </View>
+        <News/>
+        <Version/>
+      </SafeAreaView>
+
+
+    </>
   );
 }
 
@@ -33,7 +38,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignItems: "center",
     color: 'white',
-    marginTop: 70,
+    marginTop: Platform.OS === 'android' ? 50 : 0,
     paddingHorizontal: 10
   },
   title: {

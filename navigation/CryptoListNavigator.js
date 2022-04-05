@@ -29,9 +29,13 @@ export default function CryptoListNavigator() {
           fontSize: 20,
         },
         headerTintColor: 'white',
+        headerBackVisible: false
+      }}
+      options={{
+        headerBackTitleVisible: false
       }}>
       <Stack.Screen
-        name="Liste des cryptos"
+        name="crypto_list"
         component={CryptoList}
         options={{
           headerShown: false,
@@ -39,6 +43,7 @@ export default function CryptoListNavigator() {
       <Stack.Screen
         options={({route}) => ({
           title: route.params?.id.toUpperCase(),
+          headerBackTitleVisible: false
         })}
         name="crypto_info"
         component={CryptoInfo}/>

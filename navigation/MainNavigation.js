@@ -15,7 +15,7 @@ export default function MainNavigation() {
           color: "white",
           justifyContent: 'center',
           paddingTop: 10,
-          height: 70
+          height: 90
         },
         tabBarActiveTintColor: 'orange',
         tabBarInactiveTintColor: 'white',
